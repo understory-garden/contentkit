@@ -13,6 +13,7 @@ export const UG = {
   usesConcept: `${VOCAB_PREFIX}usesConcept`,
   usesConceptIndex: `${VOCAB_PREFIX}usesConceptIndex`,
   conceptPrefix: `${VOCAB_PREFIX}conceptPrefix`,
+  tagPrefix: `${VOCAB_PREFIX}tagPrefix`,
   storedAt: `${VOCAB_PREFIX}storedAt`,
   usesCSS: `${VOCAB_PREFIX}usesCSS`,
   monetizedFor: `${VOCAB_PREFIX}monetizedFor`,
@@ -40,6 +41,10 @@ export function noteUriToName(noteUri: string) {
 
 export function tagNameToUrlSafeId(tagName: string) {
   return encodeURIComponent(tagName);
+}
+
+export function getTagNameFromNode(node: any){
+  return node.name
 }
 
 export async function loadNote(url: string) {

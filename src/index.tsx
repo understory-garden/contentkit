@@ -8,7 +8,7 @@ import * as base58 from 'micro-base58';
 
 const VOCAB_PREFIX = 'https://understory.coop/vocab/garden#';
 export const UG = {
-  noteBody: `${VOCAB_PREFIX}noteBody`,
+  slateJSON: `${VOCAB_PREFIX}slateJSON`,
   noteUrl: `${VOCAB_PREFIX}noteUrl`,
   usesConcept: `${VOCAB_PREFIX}usesConcept`,
   usesConceptIndex: `${VOCAB_PREFIX}usesConceptIndex`,
@@ -51,7 +51,7 @@ export async function loadNote(url: string) {
   const name = noteUriToName(url);
   const noteResource = await getSolidDataset(url);
   const note = getThing(noteResource, url);
-  const body = note && getStringNoLocale(note, UG.noteBody);
+  const body = note && getStringNoLocale(note, UG.slateJSON);
   return { name, body };
 }
 
